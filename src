@@ -1,0 +1,1788 @@
+"""
+Assessment: Complex Data Structures and Algorithms
+"""
+
+# Problem 1: Balanced Parentheses
+"""
+Given a string s containing characters '(', ')', '{', '}', '[', and ']', 
+determine if the string is valid. It is valid if:
+1) Open brackets are closed by the same type of brackets.
+2) Open brackets are closed in the correct order.
+
+Example:
+Input: s = "{[]}"
+Output: True
+
+Input: s = "([)]"
+Output: False
+"""
+def is_valid(s: str) -> bool:
+    pass
+
+def test_is_valid():
+    assert is_valid("{[]}") == True
+    assert is_valid("([)]") == False
+    print("Test 1 Passed!")
+
+
+# Problem 2: LRU Cache
+"""
+Design a data structure that is an LRU cache.
+"""
+class LRUCache:
+    def __init__(self, capacity: int):
+        pass
+
+    def get(self, key: int) -> int:
+        pass
+
+    def put(self, key: int, value: int) -> None:
+        pass
+
+def test_LRUCache():
+    cache = LRUCache(2)
+    cache.put(1, 1)
+    cache.put(2, 2)
+    assert cache.get(1) == 1
+    cache.put(3, 3)
+    assert cache.get(2) == -1
+    print("Test 2 Passed!")
+
+# Problem 3: Implement Queue using Stacks
+"""
+Design a queue using two stacks.
+"""
+class MyQueue:
+    def __init__(self):
+        pass
+
+    def push(self, x: int) -> None:
+        pass
+
+    def pop(self) -> int:
+        pass
+
+    def peek(self) -> int:
+        pass
+
+    def empty(self) -> bool:
+        pass
+
+def test_MyQueue():
+    q = MyQueue()
+    q.push(1)
+    q.push(2)
+    assert q.peek() == 1
+    assert q.pop() == 1
+    assert q.empty() == False
+    print("Test 3 Passed!")
+
+# Problem 4: Maximum Depth of Binary Tree
+"""
+Given the root of a binary tree, determine its maximum depth.
+A binary tree's maximum depth is the number of nodes along the longest path 
+from the root node down to the farthest leaf node.
+"""
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+def maxDepth(root: TreeNode) -> int:
+    pass
+
+def test_maxDepth():
+    a = TreeNode(1)
+    b = TreeNode(2)
+    c = TreeNode(3)
+    a.left = b
+    a.right = c
+    assert maxDepth(a) == 2
+    print("Test 4 Passed!")
+
+# Problem 5: Merge Intervals
+"""
+Given an array of intervals, merge any overlapping intervals.
+"""
+def merge(intervals):
+    pass
+
+def test_merge():
+    assert merge([[1,3],[2,6],[8,10],[15,18]]) == [[1,6],[8,10],[15,18]]
+    print("Test 5 Passed!")
+
+# ...
+
+# Problem 6: Top K Frequent Elements
+"""
+Given a non-empty array of integers, return the k most frequent elements.
+
+Example:
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+"""
+def topKFrequent(nums, k):
+    pass
+
+def test_topKFrequent():
+    assert set(topKFrequent([1,1,1,2,2,3], 2)) == {1, 2}
+    print("Test 6 Passed!")
+
+# Problem 7: Serialize and Deserialize Binary Tree
+"""
+Design an algorithm to serialize and deserialize a binary tree. 
+There is no restriction on how your serialization/deserialization algorithm should work.
+"""
+class Codec:
+    def serialize(self, root):
+        pass
+
+    def deserialize(self, data):
+        pass
+
+def test_Codec():
+    codec = Codec()
+    a = TreeNode(1)
+    b = TreeNode(2)
+    c = TreeNode(3)
+    a.left = b
+    a.right = c
+    data = codec.serialize(a)
+    root = codec.deserialize(data)
+    assert maxDepth(root) == 2
+    print("Test 7 Passed!")
+
+# Problem 8: Search in Rotated Sorted Array
+"""
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
+You are given a target value to search. If found in the array return its index, otherwise return -1.
+You may assume no duplicate exists in the array.
+Your algorithm's runtime complexity must be in the order of O(log n).
+
+Example:
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+"""
+def search(nums, target):
+    pass
+
+def test_search():
+    assert search([4,5,6,7,0,1,2], 0) == 4
+    print("Test 8 Passed!")
+
+# Problem 9: Sliding Window Maximum
+"""
+Given an array nums, there is a sliding window of size k which is moving from the very left of 
+the array to the very right. You can only see the k numbers in the window. 
+Each time the sliding window moves right by one position. Return the max sliding window.
+
+Example:
+Input: nums = [1,3,-1,-3,5,3,6,7], and k = 3
+Output: [3,3,5,5,6,7]
+"""
+def maxSlidingWindow(nums, k):
+    pass
+
+def test_maxSlidingWindow():
+    assert maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3) == [3,3,5,5,6,7]
+    print("Test 9 Passed!")
+
+# Problem 10: Detect Cycle in a Linked List
+"""
+Given a linked list, determine if it has a cycle in it. Implement it using O(1) (i.e. constant) memory.
+"""
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+def hasCycle(head: ListNode) -> bool:
+    pass
+
+def test_hasCycle():
+    a = ListNode(1)
+    b = ListNode(2)
+    c = ListNode(3)
+    a.next = b
+    b.next = c
+    c.next = a
+    assert hasCycle(a) == True
+    print("Test 10 Passed!")
+
+"""
+Assessment: Basics of Generative AI
+"""
+
+# Problem 11: Implement a Basic Markov Chain
+"""
+Using a state transition matrix for weather, implement a basic Markov Chain to predict 
+the weather for the next day given today's weather. Your states are "Sunny" and "Rainy".
+
+Example:
+Input: Today's weather = "Sunny"
+Output: Tomorrow's weather = "Rainy" or "Sunny" based on the transition matrix.
+"""
+def predict_weather(today: str) -> str:
+    pass
+
+def test_predict_weather():
+    assert predict_weather("Sunny") in ["Sunny", "Rainy"]
+    print("Test 1 Passed!")
+
+
+# Problem 12: Design a Tokenizer
+"""
+Given a corpus of text, design a basic tokenizer to split the text into individual words.
+
+Example:
+Input: "Generative AI is fun."
+Output: ["Generative", "AI", "is", "fun."]
+"""
+def tokenizer(text: str) -> list:
+    pass
+
+def test_tokenizer():
+    assert tokenizer("Generative AI is fun.") == ["Generative", "AI", "is", "fun."]
+    print("Test 2 Passed!")
+
+
+# Problem 13: Basic One-Hot Encoding
+"""
+Design a function to perform one-hot encoding for a small set of words.
+Assume a fixed vocabulary for simplicity.
+
+Example:
+Vocabulary: ["Generative", "AI", "is", "fun"]
+Input: "AI"
+Output: [0, 1, 0, 0]
+"""
+def one_hot(word: str, vocab: list) -> list:
+    pass
+
+def test_one_hot():
+    vocab = ["Generative", "AI", "is", "fun"]
+    assert one_hot("AI", vocab) == [0, 1, 0, 0]
+    print("Test 3 Passed!")
+
+
+# Problem 14: Understand Latent Space
+"""
+Given a list of embeddings (latent representations), find the two most similar embeddings.
+For simplicity, use Euclidean distance.
+
+Example:
+Input: embeddings = [[1,2], [3,4], [3.1, 4.1]]
+Output: ([3,4], [3.1, 4.1])
+"""
+def find_similar(embeddings: list) -> tuple:
+    pass
+
+def test_find_similar():
+    embeddings = [[1,2], [3,4], [3.1, 4.1]]
+    assert find_similar(embeddings) == ([3,4], [3.1, 4.1])
+    print("Test 4 Passed!")
+
+
+# Problem 15: Generate Simple Patterns
+"""
+Write a basic function to generate patterns. Given an input sequence like "AB", the function 
+should be able to generate a sequence like "ABABABAB".
+
+Example:
+Input: pattern = "AB", repeats = 4
+Output: "ABABABAB"
+"""
+def generate_pattern(pattern: str, repeats: int) -> str:
+    pass
+
+def test_generate_pattern():
+    assert generate_pattern("AB", 4) == "ABABABAB"
+    print("Test 5 Passed!")
+
+
+# Problem 16: Simple Text Prediction
+"""
+Given a sequence of words, predict the next word based on frequency. This is a naive approach 
+to text generation.
+
+Example:
+Input: corpus = "AI is fun. Generative AI is powerful. AI is transformative.", word = "AI"
+Output: "is"
+"""
+def predict_next_word(corpus: str, word: str) -> str:
+    pass
+
+def test_predict_next_word():
+    corpus = "AI is fun. Generative AI is powerful. AI is transformative."
+    assert predict_next_word(corpus, "AI") == "is"
+    print("Test 6 Passed!")
+
+
+# Problem 17: Implement a Simple GAN Discriminator
+"""
+Design a basic discriminator for a Generative Adversarial Network. Given an input, it should
+distinguish if it's real or fake. For this task, mock real and fake inputs.
+
+Example:
+Input: "RealData"
+Output: "Real"
+"""
+def discriminator(input_data: str) -> str:
+    pass
+
+def test_discriminator():
+    assert discriminator("RealData") == "Real"
+    print("Test 7 Passed!")
+
+
+# Problem 18: Basic Noise Generator
+"""
+Design a function that generates random noise of a given length.
+
+Example:
+Input: length = 3
+Output: [0.12, 0.75, 0.33]  # Random output
+"""
+def generate_noise(length: int) -> list:
+    pass
+
+def test_generate_noise():
+    noise = generate_noise(3)
+    assert len(noise) == 3
+    assert all(0 <= n <= 1 for n in noise)
+    print("Test 8 Passed!")
+
+
+# Problem 19: Mock a Generative Model
+"""
+Design a basic function that acts as a mock generative model. Given noise, it should produce
+a generated output. For this problem, the mock model will simply return the sum of the noise values.
+
+Example:
+Input: [0.1, 0.2, 0.3]
+Output: 0.6
+"""
+def mock_generative_model(noise: list) -> float:
+    pass
+
+def test_mock_generative_model():
+    assert mock_generative_model([0.1, 0.2, 0.3]) == 0.6
+    print("Test 9 Passed!")
+
+
+# Problem 20: Generate Text using Trigrams
+"""
+Design a function to generate text using trigrams. Given a seed of two words, it should
+generate the next word based on trigram frequency.
+
+Example:
+Corpus = "I love AI. I love coding. I love machine learning."
+Input: "I love"
+Output: "AI"
+"""
+def generate_text_trigram(corpus: str, seed: str) -> str:
+    pass
+
+def test_generate_text_trigram():
+    corpus = "I love AI. I love coding. I love machine learning."
+    assert generate_text_trigram(corpus, "I love") == "AI"
+    print("Test 10 Passed!")
+"""
+Assessment: Text and Image Generation
+"""
+
+# Problem 21: Character-level Text Generator
+"""
+Implement a function that generates text based on a given seed character. 
+Your function should mimic a character-level generation where the next character depends 
+on the previous one. For simplicity, you may use a predefined dictionary.
+
+Example:
+Dictionary: {'a': 'b', 'b': 'c', 'c': 'a'}
+Input: 'a'
+Output: 'abca'
+"""
+def char_gen(seed, length=4):
+    pass
+
+def test_char_gen():
+    assert char_gen('a') == 'abca'
+    print("Test 1 Passed!")
+
+
+# Problem 22: Simple Image Noise Reduction
+"""
+Given a 2D list of pixel values (0 or 1), implement a function to reduce noise. 
+If a pixel is surrounded by more than 5 '0's, set it to 0.
+
+Example:
+Input: [[1, 1, 0], [0, 1, 0], [0, 0, 0]]
+Output: [[1, 0, 0], [0, 0, 0], [0, 0, 0]]
+"""
+def reduce_noise(image):
+    pass
+
+def test_reduce_noise():
+    image = [[1, 1, 0], [0, 1, 0], [0, 0, 0]]
+    assert reduce_noise(image) == [[1, 0, 0], [0, 0, 0], [0, 0, 0]]
+    print("Test 2 Passed!")
+
+
+# Problem 23: Image Caption Generator
+"""
+Implement a function that returns a predefined caption for a given input image. 
+For this task, the image will be represented as a string label.
+
+Example:
+Image Labels: {'cat': 'A cat', 'dog': 'A dog'}
+Input: 'cat'
+Output: 'A cat'
+"""
+def caption_generator(image_label):
+    pass
+
+def test_caption_generator():
+    assert caption_generator('cat') == 'A cat'
+    print("Test 3 Passed!")
+
+
+# Problem 24: Text Summarization
+"""
+Given a long text, implement a function that returns a summarized version by returning the first 
+and last sentences.
+
+Example:
+Input: "Generative AI is complex. It requires understanding of various concepts. But it's rewarding."
+Output: "Generative AI is complex. But it's rewarding."
+"""
+def summarize(text):
+    pass
+
+def test_summarize():
+    text = "Generative AI is complex. It requires understanding of various concepts. But it's rewarding."
+    assert summarize(text) == "Generative AI is complex. But it's rewarding."
+    print("Test 4 Passed!")
+
+
+# Problem 25: Generating Art
+"""
+Given a palette of colors and a canvas of size n x n, generate an artwork by randomly placing colors.
+
+Example:
+Palette: ['Red', 'Blue', 'Green']
+Input: n = 2
+Output: [['Red', 'Green'], ['Blue', 'Green']]
+"""
+import random
+
+def generate_art(n, palette):
+    pass
+
+def test_generate_art():
+    art = generate_art(2, ['Red', 'Blue', 'Green'])
+    assert len(art) == 2 and all(color in ['Red', 'Blue', 'Green'] for row in art for color in row)
+    print("Test 5 Passed!")
+
+
+# Problem 26: Generate Haiku
+"""
+Implement a function to generate a Haiku. For simplicity, you can use predefined lines.
+
+Example:
+Lines: ['The sky is so blue', 'Roses red and violets too', 'I love every hue']
+Output: "The sky is so blue\nRoses red and violets too\nI love every hue"
+"""
+def generate_haiku(lines):
+    pass
+
+def test_generate_haiku():
+    lines = ['The sky is so blue', 'Roses red and violets too', 'I love every hue']
+    assert generate_haiku(lines) == "The sky is so blue\nRoses red and violets too\nI love every hue"
+    print("Test 6 Passed!")
+
+
+# Problem 27: Image Pixel Intensity
+"""
+Given a 2D grayscale image (values between 0 to 255), implement a function that returns the 
+average pixel intensity.
+
+Example:
+Input: [[100, 200], [150, 250]]
+Output: 162.5
+"""
+def average_intensity(image):
+    pass
+
+def test_average_intensity():
+    image = [[100, 200], [150, 250]]
+    assert average_intensity(image) == 162.5
+    print("Test 7 Passed!")
+
+
+# Problem 28: Generate Lyrics
+"""
+Given a set of predefined lyrics lines, implement a function that creates a song by randomly 
+choosing lines.
+
+Example:
+Lines: ["Love is in the air", "Everywhere I look around"]
+Output: "Love is in the air\nEverywhere I look around\nLove is in the air"
+"""
+def generate_lyrics(lines, length=3):
+    pass
+
+def test_generate_lyrics():
+    lines = ["Love is in the air", "Everywhere I look around"]
+    lyrics = generate_lyrics(lines)
+    assert len(lyrics.split('\n')) == 3 and all(line in lines for line in lyrics.split('\n'))
+    print("Test 8 Passed!")
+
+
+# Problem 29: Text Stylizer
+"""
+Implement a function that stylizes a given text based on provided styles such as uppercase, 
+lowercase, or title case.
+
+Example:
+Input: text="hello world", style="uppercase"
+Output: "HELLO WORLD"
+"""
+def stylize_text(text, style):
+    pass
+
+def test_stylize_text():
+    assert stylize_text("hello world", "uppercase") == "HELLO WORLD"
+    print("Test 9 Passed!")
+
+
+# Problem 30: Basic Color Filter
+"""
+Given a 2D image (with colors as strings), implement a function to apply a color filter by 
+changing one color to another.
+
+Example:
+Image: [["Red", "Green"], ["Blue", "Red"]]
+Filter: "Red" to "Yellow"
+Output: [["Yellow", "Green"], ["Blue", "Yellow"]]
+"""
+def apply_filter(image, original_color, new_color):
+    pass
+
+def test_apply_filter():
+    image = [["Red", "Green"], ["Blue", "Red"]]
+    assert apply_filter(image, "Red", "Yellow") == [["Yellow", "Green"], ["Blue", "Yellow"]]
+    print("Test 10 Passed!")
+
+"""
+Assessment: Sequence-to-Sequence Problems
+"""
+
+# Problem 31: Basic Text Translation
+"""
+Implement a Seq2Seq model that translates English text to French. For the purpose of this test,
+you can use a simplified dictionary for translation.
+
+Example:
+Dictionary: {'hello': 'bonjour', 'world': 'monde'}
+Input: 'hello world'
+Output: 'bonjour monde'
+"""
+def translate_to_french(english_text):
+    pass
+
+def test_translate_to_french():
+    assert translate_to_french('hello world') == 'bonjour monde'
+    print("Test 1 Passed!")
+
+
+# Problem 32: Reverse Sentence Words
+"""
+Using Seq2Seq, implement a function that reverses the order of words in a sentence.
+
+Example:
+Input: "hello world"
+Output: "world hello"
+"""
+def reverse_words(sentence):
+    pass
+
+def test_reverse_words():
+    assert reverse_words("hello world") == "world hello"
+    print("Test 2 Passed!")
+
+
+# Problem 33: Date Formatter
+"""
+Implement a Seq2Seq function to convert a date format from "YYYY-MM-DD" to "DD/MM/YYYY".
+
+Example:
+Input: "2023-09-03"
+Output: "03/09/2023"
+"""
+def reformat_date(date):
+    pass
+
+def test_reformat_date():
+    assert reformat_date("2023-09-03") == "03/09/2023"
+    print("Test 3 Passed!")
+
+
+# Problem 34: Basic Text Summarization
+"""
+Implement a model to summarize long articles by returning only the first three sentences.
+
+Example:
+Input: "Seq2Seq models are fascinating. They translate sequences. It's awesome!"
+Output: "Seq2Seq models are fascinating. They translate sequences. It's awesome."
+"""
+def summarize_text(text):
+    pass
+
+def test_summarize_text():
+    article = "Seq2Seq models are fascinating. They translate sequences. It's awesome!"
+    assert summarize_text(article) == article
+    print("Test 4 Passed!")
+
+
+# Problem 35: Number to Word Conversion
+"""
+Given a number, implement a Seq2Seq function that converts it into words.
+
+Example:
+Input: 25
+Output: "twenty five"
+"""
+def number_to_words(number):
+    pass
+
+def test_number_to_words():
+    assert number_to_words(25) == "twenty five"
+    print("Test 5 Passed!")
+
+
+# Problem 36: Basic Dialogue System
+"""
+Implement a simple dialogue system using Seq2Seq where certain questions have specific answers.
+
+Example:
+Questions & Answers: {"how are you?": "I'm fine", "hello": "hi"}
+Input: "hello"
+Output: "hi"
+"""
+def dialogue_system(question):
+    pass
+
+def test_dialogue_system():
+    assert dialogue_system("hello") == "hi"
+    print("Test 6 Passed!")
+
+
+# Problem 37: DNA to RNA Conversion
+"""
+Given a DNA sequence, implement a Seq2Seq function that converts it into an RNA sequence.
+
+Example:
+Input: "ATGC"
+Output: "AUGC"
+"""
+def dna_to_rna(dna_seq):
+    pass
+
+def test_dna_to_rna():
+    assert dna_to_rna("ATGC") == "AUGC"
+    print("Test 7 Passed!")
+
+
+# Problem 38: Sequence Padding
+"""
+Implement a function to pad a sequence to a desired length. If the sequence is too long, truncate it.
+
+Example:
+Input: seq="hello", length=7
+Output: "hello__"
+"""
+def pad_sequence(seq, length):
+    pass
+
+def test_pad_sequence():
+    assert pad_sequence("hello", 7) == "hello__"
+    print("Test 8 Passed!")
+
+
+# Problem 39: Tokenization
+"""
+Implement a function that tokenizes a sentence into words using a Seq2Seq approach.
+
+Example:
+Input: "hello world"
+Output: ["hello", "world"]
+"""
+def tokenize(sentence):
+    pass
+
+def test_tokenize():
+    assert tokenize("hello world") == ["hello", "world"]
+    print("Test 9 Passed!")
+
+
+# Problem 40: Time Conversion
+"""
+Implement a Seq2Seq function to convert 12-hour time format to 24-hour format.
+
+Example:
+Input: "02:30 PM"
+Output: "14:30"
+"""
+def time_conversion(time_12h):
+    pass
+
+def test_time_conversion():
+    assert time_conversion("02:30 PM") == "14:30"
+    print("Test 10 Passed!")
+
+"""
+Assessment: Ethics and Bias in AI
+"""
+
+# Problem 41: Detect Gender Bias
+"""
+Write code to detect and alert gender bias in text generation. 
+For the purpose of this test, consider sentences that overly associate one gender with a certain role as biased.
+
+Example:
+Input: "The nurse is she."
+Output: "Bias detected"
+"""
+def detect_gender_bias(text):
+    pass
+
+def test_detect_gender_bias():
+    assert detect_gender_bias("The nurse is she.") == "Bias detected"
+    print("Test 41 Passed!")
+
+
+# Problem 42: Prevent Harmful Content
+"""
+Implement a safety layer on top of a basic text generator to prevent generating harmful or inappropriate content.
+Consider words like "violence", "hate" as harmful.
+
+Example:
+Input: "Promote [inappropriate_word]"
+Output: "Content flagged"
+"""
+def content_safety_filter(text):
+    pass
+
+def test_content_safety_filter():
+    assert content_safety_filter("Promote violence") == "Content flagged"
+    print("Test 42 Passed!")
+
+
+# Problem 43: Age Bias Detection
+"""
+Detect age bias in sentences. Flag sentences that make presumptive statements about age.
+
+Example:
+Input: "Old people can't use smartphones."
+Output: "Age bias detected"
+"""
+def detect_age_bias(text):
+    pass
+
+def test_detect_age_bias():
+    assert detect_age_bias("Old people can't use smartphones.") == "Age bias detected"
+    print("Test 43 Passed!")
+
+
+# Problem 44: Racial Bias Detector
+"""
+Detect racial bias in given text.
+
+Example:
+Input: "[Race] people are [stereotype]."
+Output: "Racial bias detected"
+"""
+def detect_racial_bias(text):
+    pass
+
+def test_detect_racial_bias():
+    assert detect_racial_bias("Asian people are smart.") == "Racial bias detected"
+    print("Test 44 Passed!")
+
+
+# Problem 45: Data Transparency
+"""
+Given a dataset, highlight columns that might contain sensitive personal information.
+
+Example:
+Data: {"name": ["John"], "age": [25], "SSN": ["XXX-XX-XXXX"]}
+Output: ["name", "SSN"]
+"""
+def identify_sensitive_columns(data):
+    pass
+
+def test_identify_sensitive_columns():
+    data = {"name": ["John"], "age": [25], "SSN": ["XXX-XX-XXXX"]}
+    assert identify_sensitive_columns(data) == ["name", "SSN"]
+    print("Test 45 Passed!")
+
+
+# Problem 46: Fairness in Algorithms
+"""
+Given a dataset and outcomes of a model, check if the outcomes are unfairly biased against a particular gender.
+Consider a significant deviation from the mean as bias.
+
+Example:
+Data: [{"gender": "male", "outcome": True}, {"gender": "female", "outcome": False}]
+Outcome: Bias detected against gender: female
+"""
+def detect_outcome_bias(data):
+    pass
+
+def test_detect_outcome_bias():
+    data = [{"gender": "male", "outcome": True}, {"gender": "female", "outcome": False}]
+    assert detect_outcome_bias(data) == "Bias detected against gender: female"
+    print("Test 46 Passed!")
+
+
+# Problem 47: Content Personalization Ethics
+"""
+Given a user's browsing history, ensure you're not using sensitive personal attributes like health 
+conditions for content personalization.
+
+Example:
+Browsing history: ["cancer treatment", "holiday destinations"]
+Output: "Sensitive attributes detected"
+"""
+def personalization_ethics_check(history):
+    pass
+
+def test_personalization_ethics_check():
+    history = ["cancer treatment", "holiday destinations"]
+    assert personalization_ethics_check(history) == "Sensitive attributes detected"
+    print("Test 47 Passed!")
+
+
+# Problem 48: Diverse Image Dataset
+"""
+Check if a given image dataset is diverse in terms of gender. 
+
+Example:
+Dataset: [{"image": "path1", "label": "male"}, {"image": "path2", "label": "female"}]
+Output: "Dataset is diverse"
+"""
+def check_image_dataset_diversity(dataset):
+    pass
+
+def test_check_image_dataset_diversity():
+    dataset = [{"image": "path1", "label": "male"}, {"image": "path2", "label": "female"}]
+    assert check_image_dataset_diversity(dataset) == "Dataset is diverse"
+    print("Test 48 Passed!")
+
+
+# Problem 49: Ethical Advertising
+"""
+Ensure that a given advertisement does not make false promises or exaggerate features.
+
+Example:
+Ad text: "Our product guarantees 100% weight loss."
+Output: "Unethical advertising detected"
+"""
+def check_ad_ethics(ad_text):
+    pass
+
+def test_check_ad_ethics():
+    ad_text = "Our product guarantees 100% weight loss."
+    assert check_ad_ethics(ad_text) == "Unethical advertising detected"
+    print("Test 49 Passed!")
+
+
+# Problem 50: Financial Fairness
+"""
+Check if given loan application decisions are made fairly without any gender bias.
+
+Example:
+Applications: [{"name": "John", "gender": "male", "approved": True}, {"name": "Jane", "gender": "female", "approved": False}]
+Output: "Bias detected against gender: female"
+"""
+def loan_decision_fairness(applications):
+    pass
+
+def test_loan_decision_fairness():
+    applications = [{"name": "John", "gender": "male", "approved": True}, {"name": "Jane", "gender": "female", "approved": False}]
+    assert loan_decision_fairness(applications) == "Bias detected against gender: female"
+    print("Test 50 Passed!")
+
+"""
+Assessment: Evaluation Metrics
+"""
+
+# Problem 51: BLEU Score Calculation
+"""
+Implement the BLEU score metric for evaluating machine translation quality. Use unigram precision for simplicity.
+"""
+def bleu_score(reference, candidate):
+    pass
+
+def test_bleu_score():
+    reference = "the quick brown fox jumped over the lazy dog"
+    candidate = "quick fox jumped over the lazy dog"
+    score = bleu_score(reference, candidate)
+    assert 0 <= score <= 1
+    print("Test 51 Passed!")
+
+
+# Problem 52: Custom Coherence Score
+"""
+Design a metric for evaluating the coherence of generated stories. 
+The score should be between 0 and 1, with 1 being most coherent.
+"""
+def coherence_score(story):
+    pass
+
+def test_coherence_score():
+    story = "Once upon a time. The end."
+    score = coherence_score(story)
+    assert 0 <= score <= 1
+    print("Test 52 Passed!")
+
+
+# Problem 53: Implement Precision 
+"""
+Given the predicted labels and true labels, calculate precision.
+"""
+def precision(y_true, y_pred):
+    pass
+
+def test_precision():
+    assert precision([1, 1, 0, 1], [1, 1, 1, 0]) == 2/3
+    print("Test 53 Passed!")
+
+
+# Problem 54: Implement Recall
+"""
+Given the predicted labels and true labels, calculate recall.
+"""
+def recall(y_true, y_pred):
+    pass
+
+def test_recall():
+    assert recall([1, 1, 0, 1], [1, 1, 1, 0]) == 2/3
+    print("Test 54 Passed!")
+
+
+# Problem 55: F1 Score Calculation
+"""
+Implement the F1 score given precision and recall.
+"""
+def f1_score(precision_val, recall_val):
+    pass
+
+def test_f1_score():
+    assert f1_score(1, 1) == 1
+    print("Test 55 Passed!")
+
+
+# Problem 56: Implement AUC-ROC
+"""
+Given true binary labels and predicted probabilities, compute the AUC-ROC score.
+"""
+def auc_roc(y_true, y_scores):
+    pass
+
+def test_auc_roc():
+    assert 0 <= auc_roc([1, 0, 1, 0], [0.9, 0.1, 0.8, 0.2]) <= 1
+    print("Test 56 Passed!")
+
+
+# Problem 57: Perplexity Calculation for Text
+"""
+Given a sequence of log probabilities, compute the perplexity.
+"""
+def perplexity(log_probs):
+    pass
+
+def test_perplexity():
+    assert perplexity([-1, -0.5, -2, -0.2]) > 1
+    print("Test 57 Passed!")
+
+
+# Problem 58: Hamming Loss for Multi-label Classification
+"""
+Compute the Hamming loss for multi-label classification.
+"""
+def hamming_loss(y_true, y_pred):
+    pass
+
+def test_hamming_loss():
+    assert hamming_loss([[1, 0, 1], [0, 1, 0]], [[1, 0, 0], [0, 0, 1]]) == 1/3
+    print("Test 58 Passed!")
+
+
+# Problem 59: Custom Novelty Score
+"""
+Design a metric for evaluating the novelty of generated content compared to a reference set.
+The score should be between 0 and 1, with 1 being most novel.
+"""
+def novelty_score(generated, reference_set):
+    pass
+
+def test_novelty_score():
+    generated = "apple"
+    reference_set = ["apple", "banana", "cherry"]
+    score = novelty_score(generated, reference_set)
+    assert 0 <= score <= 1
+    print("Test 59 Passed!")
+
+
+# Problem 60: Jaccard Similarity for Sets
+"""
+Given two sets, compute the Jaccard Similarity.
+"""
+def jaccard_similarity(set1, set2):
+    pass
+
+def test_jaccard_similarity():
+    assert jaccard_similarity({1, 2, 3}, {2, 3, 4}) == 2/4
+    print("Test 60 Passed!")
+
+
+"""
+Assessment: Reinforcement Learning for Generation
+"""
+
+# Problem 61: Basic Q-Learning Implementation
+"""
+Implement a basic Q-learning algorithm to maximize the cumulative reward in a simple environment.
+The environment is a list of rewards, and the agent has two actions at each step: move right or stay.
+
+NOTE: Initialize your Q-table with zeros. Assume a deterministic environment.
+"""
+def q_learning(rewards, alpha=0.1, gamma=0.9, episodes=100):
+    num_states = len(rewards)
+    Q = [[0, 0] for _ in range(num_states)]  # [stay, move right]
+    
+    # Your Q-learning code here.
+    
+    return Q
+
+def test_q_learning():
+    rewards = [0, 1, 5, 10]
+    Q = q_learning(rewards)
+    assert max(Q[2]) > max(Q[1])  # Moving right from state 2 gives more rewards.
+    print("Test 61 Passed!")
+
+
+# Problem 62: Epsilon Greedy Strategy
+"""
+Implement the epsilon-greedy strategy for action selection. 
+The function should return the action 'move' or 'stay' based on Q-values and epsilon.
+"""
+def epsilon_greedy(Q_state, epsilon=0.1):
+    pass
+
+def test_epsilon_greedy():
+    assert epsilon_greedy([10, 5], 1) in ['stay', 'move']  # Always explore
+    assert epsilon_greedy([10, 5], 0) == 'stay'  # Always exploit
+    print("Test 62 Passed!")
+
+
+# Problem 63: Implementing a Simple Reward Function
+"""
+Given an action and the current state, implement a reward function for the agent.
+"""
+def reward_function(state, action):
+    pass
+
+def test_reward_function():
+    # Just for basic testing. You might want to consider edge cases or other scenarios.
+    assert reward_function(2, 'move') > reward_function(2, 'stay')
+    print("Test 63 Passed!")
+
+
+# Problem 64: Using a Neural Network for Q-values
+"""
+Define a simple neural network with one hidden layer to represent Q-values for our environment.
+Use any deep learning library of your choice.
+
+NOTE: This question might require external libraries, ensure they're installed.
+"""
+def neural_network_q():
+    pass
+
+def test_neural_network_q():
+    model = neural_network_q()
+    # Simple test to check if model is initialized
+    assert model is not None
+    print("Test 64 Passed!")
+
+
+# Problem 65: Policy Gradient Implementation
+"""
+Implement the basic structure of the policy gradient algorithm. For simplicity, just set up the function.
+"""
+def policy_gradient():
+    pass
+
+def test_policy_gradient():
+    pg = policy_gradient()
+    # Simple test to check if function is set up.
+    assert pg is not None
+    print("Test 65 Passed!")
+
+
+# Problem 66: Implement Experience Replay
+"""
+Set up a basic structure for experience replay in reinforcement learning.
+"""
+class ExperienceReplay:
+    def __init__(self, capacity):
+        pass
+
+def test_experience_replay():
+    buffer = ExperienceReplay(100)
+    assert hasattr(buffer, "capacity") and buffer.capacity == 100
+    print("Test 66 Passed!")
+
+
+# Problem 67: Implement a State Transition Function
+"""
+Given the current state and action taken, define a state transition function.
+For the current assessment, assume the states are numbers and actions can be -1, 0, or 1 (decrease, stay, increase).
+"""
+def state_transition(current_state, action):
+    pass
+
+def test_state_transition():
+    assert state_transition(3, 1) == 4
+    assert state_transition(3, -1) == 2
+    print("Test 67 Passed!")
+
+
+# Problem 68: Model-based RL Planning
+"""
+Implement a basic model-based reinforcement learning planning step.
+"""
+def model_based_planning():
+    pass
+
+def test_model_based_planning():
+    plan = model_based_planning()
+    assert plan is not None
+    print("Test 68 Passed!")
+
+
+# Problem 69: Monte Carlo for Policy Evaluation
+"""
+Implement a Monte Carlo method for policy evaluation. For simplicity, just set up the function.
+"""
+def monte_carlo_policy_evaluation():
+    pass
+
+def test_monte_carlo_policy_evaluation():
+    evaluation = monte_carlo_policy_evaluation()
+    assert evaluation is not None
+    print("Test 69 Passed!")
+
+
+# Problem 70: Implementing TD-Lambda
+"""
+Set up the basic structure for TD-Lambda for policy evaluation.
+"""
+def td_lambda():
+    pass
+
+def test_td_lambda():
+    td = td_lambda()
+    assert td is not None
+    print("Test 70 Passed!")
+
+"""
+Assessment: Attention Mechanisms
+"""
+
+# Problem 71: Basic Dot-Product Attention
+"""
+Given two matrices, Q (queries) and K (keys), implement the dot-product attention mechanism.
+Normalize the scores using a softmax.
+"""
+def dot_product_attention(Q, K):
+    pass
+
+def test_dot_product_attention():
+    import numpy as np
+    Q = np.array([[1, 2], [2, 3]])
+    K = np.array([[1, 2], [2, 3]])
+    result = dot_product_attention(Q, K)
+    assert np.sum(result) == 2
+    print("Test 71 Passed!")
+
+
+# Problem 72: Scaled Dot-Product Attention
+"""
+Given matrices Q (queries), K (keys), and d_k (dimension of key vectors), implement the scaled dot-product attention mechanism.
+"""
+def scaled_dot_product_attention(Q, K, d_k):
+    pass
+
+def test_scaled_dot_product_attention():
+    import numpy as np
+    Q = np.array([[1, 2], [2, 3]])
+    K = np.array([[1, 2], [2, 3]])
+    d_k = 2
+    result = scaled_dot_product_attention(Q, K, d_k)
+    assert np.sum(result) == 2
+    print("Test 72 Passed!")
+
+
+# Problem 73: Multi-head Attention Mechanism
+"""
+Implement a basic multi-head attention mechanism given matrices Q (queries), K (keys), V (values), and num_heads (number of attention heads).
+"""
+def multi_head_attention(Q, K, V, num_heads):
+    pass
+
+def test_multi_head_attention():
+    import numpy as np
+    Q = np.array([[1, 2], [2, 3]])
+    K = np.array([[1, 2], [2, 3]])
+    V = np.array([[1, 2], [2, 3]])
+    result = multi_head_attention(Q, K, V, 2)
+    assert result.shape == (2, 2)
+    print("Test 73 Passed!")
+
+
+# Problem 74: Implementing a Mask for Attention
+"""
+Implement a masking function that will return a mask tensor, where positions with value of 1 are masked.
+"""
+def create_attention_mask(source):
+    pass
+
+def test_create_attention_mask():
+    source = [1, 0, 2, 0]
+    mask = create_attention_mask(source)
+    assert sum(mask) == 2
+    print("Test 74 Passed!")
+
+
+# Problem 75: Diagnosing Attention Weights
+"""
+Write a function that takes in attention weights and visualizes them for given input and output sequences.
+"""
+def visualize_attention_weights(input_seq, output_seq, attention_weights):
+    pass
+
+def test_visualize_attention_weights():
+    input_seq, output_seq = ["I", "love", "AI"], ["J'aime", "l'IA"]
+    attention_weights = [[0.5, 0.3, 0.2], [0.1, 0.5, 0.4]]
+    visualize_attention_weights(input_seq, output_seq, attention_weights)
+    print("Test 75 Passed!")
+
+
+# Problem 76: Attention Score Calculation
+"""
+Given two vectors, Q (query) and K (key), implement an attention scoring function using dot product.
+"""
+def attention_score(Q, K):
+    pass
+
+def test_attention_score():
+    import numpy as np
+    Q = np.array([1, 2])
+    K = np.array([2, 3])
+    score = attention_score(Q, K)
+    assert isinstance(score, float) or isinstance(score, int)
+    print("Test 76 Passed!")
+
+
+# Problem 77: Additive Attention
+"""
+Given vectors Q (query) and K (key), and matrices W1 and W2, implement additive attention mechanism.
+"""
+def additive_attention(Q, K, W1, W2):
+    pass
+
+def test_additive_attention():
+    import numpy as np
+    Q = np.array([1, 2])
+    K = np.array([2, 3])
+    W1 = np.array([[0.5, 0.3], [0.2, 0.4]])
+    W2 = np.array([[0.1, 0.5], [0.4, 0.2]])
+    result = additive_attention(Q, K, W1, W2)
+    assert isinstance(result, float) or isinstance(result, int)
+    print("Test 77 Passed!")
+
+
+# Problem 78: Self Attention
+"""
+Implement a basic self attention mechanism for a given matrix X.
+"""
+def self_attention(X):
+    pass
+
+def test_self_attention():
+    import numpy as np
+    X = np.array([[1, 2], [2, 3], [3, 4]])
+    result = self_attention(X)
+    assert result.shape == (3, 2)
+    print("Test 78 Passed!")
+
+
+# Problem 79: Positional Encoding for Transformer
+"""
+Implement a function to add positional encoding to a given matrix.
+"""
+def positional_encoding(matrix, d_model):
+    pass
+
+def test_positional_encoding():
+    import numpy as np
+    matrix = np.array([[1, 2, 3], [4, 5, 6]])
+    d_model = 3
+    result = positional_encoding(matrix, d_model)
+    assert result.shape == (2, 3)
+    print("Test 79 Passed!")
+
+
+# Problem 80: Implement Layer Normalization for Attention
+"""
+Implement layer normalization for a given matrix with parameters gamma and beta.
+"""
+def layer_normalization(matrix, gamma, beta):
+    pass
+
+def test_layer_normalization():
+    import numpy as np
+    matrix = np.array([[1, 2, 3], [4, 5, 6]])
+    gamma = np.array([1, 1, 1])
+    beta = np.array([0, 0, 0])
+    result = layer_normalization(matrix, gamma, beta)
+    assert result.shape == (2, 3)
+    print("Test 80 Passed!")
+
+"""
+Assessment: Data Preparation for Generative Models
+"""
+
+# Problem 81: Text Cleaning
+"""
+Given a list of strings, implement a text cleaning function that removes special characters and converts text to lowercase.
+"""
+def clean_text(text_list):
+    pass
+
+def test_clean_text():
+    input_data = ["Hello!", "This's a sample text!"]
+    result = clean_text(input_data)
+    assert result == ["hello", "thiss a sample text"]
+    print("Test 81 Passed!")
+
+
+# Problem 82: Image Normalization
+"""
+Given an image in the form of a 2D numpy array, normalize the image values to range between 0 and 1.
+"""
+def normalize_image(image_array):
+    pass
+
+def test_normalize_image():
+    import numpy as np
+    image = np.array([[100, 150], [255, 0]])
+    result = normalize_image(image)
+    assert result.max() == 1.0 and result.min() == 0.0
+    print("Test 82 Passed!")
+
+
+# Problem 83: Split Dataset
+"""
+Given a list of data items, split the dataset into training and testing sets. Return the split datasets.
+Use 80-20 rule for splitting.
+"""
+def split_dataset(data):
+    pass
+
+def test_split_dataset():
+    data = list(range(100))
+    train, test = split_dataset(data)
+    assert len(train) == 80 and len(test) == 20
+    print("Test 83 Passed!")
+
+
+# Problem 84: Handling Missing Values
+"""
+Given a dictionary of data items where some values are None, replace the None values with the average of other non-None values.
+"""
+def handle_missing_values(data_dict):
+    pass
+
+def test_handle_missing_values():
+    data = {"a": 10, "b": None, "c": 30}
+    result = handle_missing_values(data)
+    assert result["b"] == 20
+    print("Test 84 Passed!")
+
+
+# Problem 85: Text Tokenization
+"""
+Implement a function to tokenize a list of sentences into words.
+"""
+def tokenize_text(sentences):
+    pass
+
+def test_tokenize_text():
+    input_data = ["hello world", "this is a test"]
+    result = tokenize_text(input_data)
+    assert result == [["hello", "world"], ["this", "is", "a", "test"]]
+    print("Test 85 Passed!")
+
+
+# Problem 86: One-Hot Encoding
+"""
+Given a list of categorical items, implement a function to convert it to one-hot encoded format.
+"""
+def one_hot_encode(data_list):
+    pass
+
+def test_one_hot_encode():
+    input_data = ["cat", "dog", "cat"]
+    result = one_hot_encode(input_data)
+    assert result == [[1, 0], [0, 1], [1, 0]]
+    print("Test 86 Passed!")
+
+
+# Problem 87: Reshaping Image Data
+"""
+Given a 2D numpy array of image data, reshape it to have shape (height, width, 3) where 3 represents RGB channels.
+Fill the channels with repeated data from the 2D array.
+"""
+def reshape_image(image_2d):
+    pass
+
+def test_reshape_image():
+    import numpy as np
+    image = np.array([[1, 2], [3, 4]])
+    result = reshape_image(image)
+    assert result.shape == (2, 2, 3)
+    assert result[0, 0, 1] == 1
+    print("Test 87 Passed!")
+
+
+# Problem 88: Extracting Data from JSON
+"""
+Given a list of JSON formatted strings, extract a specified key's value from each JSON.
+"""
+def extract_from_json(json_list, key):
+    pass
+
+def test_extract_from_json():
+    input_data = ['{"id": 1, "name": "A"}', '{"id": 2, "name": "B"}']
+    result = extract_from_json(input_data, "name")
+    assert result == ["A", "B"]
+    print("Test 88 Passed!")
+
+
+# Problem 89: Balancing Dataset
+"""
+Given a dataset in form of a list where each item is a tuple (feature, label), balance the dataset so that all labels have equal representation.
+You can randomly drop items to balance the dataset.
+"""
+def balance_dataset(data):
+    pass
+
+def test_balance_dataset():
+    data = [("f1", "A"), ("f2", "A"), ("f3", "B")]
+    result = balance_dataset(data)
+    label_counts = [label for _, label in result]
+    assert len(result) == 2 and label_counts.count("A") == 1 and label_counts.count("B") == 1
+    print("Test 89 Passed!")
+
+
+# Problem 90: Data Augmentation - Image Flipping
+"""
+Given a 2D numpy array representing an image, implement a function to flip the image horizontally.
+"""
+def flip_image(image_2d):
+    pass
+
+def test_flip_image():
+    import numpy as np
+    image = np.array([[1, 2], [3, 4]])
+    result = flip_image(image)
+    assert (result == np.array([[2, 1], [4, 3]])).all()
+    print("Test 90 Passed!")
+
+"""
+Assessment: Interactivity for Generative Models
+"""
+
+# Problem 91: Basic Interactive Input
+"""
+Implement a function that prompts the user for a number, converts it to an integer and returns its square.
+"""
+def square_user_input():
+    pass
+
+def test_square_user_input():
+    import builtins
+    input_values = ['5']
+    output = []
+    builtins.input = lambda _: input_values.pop(0)
+    result = square_user_input()
+    assert result == 25
+    print("Test 91 Passed!")
+
+
+# Problem 92: Interactive Story
+"""
+Implement a function that prompts the user for a name and returns a greeting story.
+"""
+def greeting_story():
+    pass
+
+def test_greeting_story():
+    import builtins
+    input_values = ['Alice']
+    builtins.input = lambda _: input_values.pop(0)
+    result = greeting_story()
+    assert result == "Once upon a time, Alice entered a magical realm!"
+    print("Test 92 Passed!")
+
+
+# Problem 93: Feedback Loop
+"""
+Implement a function that prompts the user for a number, then asks if they'd like to square it.
+If they reply 'yes', return the squared value. Otherwise, return the original number.
+"""
+def interactive_square():
+    pass
+
+def test_interactive_square():
+    import builtins
+    input_values = ['5', 'yes']
+    builtins.input = lambda _: input_values.pop(0)
+    result = interactive_square()
+    assert result == 25
+    print("Test 93 Passed!")
+
+
+# Problem 94: Interactive Plotting
+"""
+Create a function that prompts the user for two numbers and plots these points on a graph.
+(Note: For testing purposes, instead of displaying the plot, return the two numbers as a tuple.)
+"""
+def plot_points():
+    pass
+
+def test_plot_points():
+    import builtins
+    input_values = ['1', '2']
+    builtins.input = lambda _: input_values.pop(0)
+    result = plot_points()
+    assert result == (1, 2)
+    print("Test 94 Passed!")
+
+
+# Problem 95: User-Driven Generation
+"""
+Implement a function that prompts the user for a seed word and returns the word repeated thrice.
+"""
+def word_repeater():
+    pass
+
+def test_word_repeater():
+    import builtins
+    input_values = ['hello']
+    builtins.input = lambda _: input_values.pop(0)
+    result = word_repeater()
+    assert result == "hellohellohello"
+    print("Test 95 Passed!")
+
+
+# Problem 96: Interactive Adjustment
+"""
+Create a function that prompts the user for a base number and an increment.
+The function should return a list starting from the base, incremented by the increment, up to base+5*increment.
+"""
+def incremental_sequence():
+    pass
+
+def test_incremental_sequence():
+    import builtins
+    input_values = ['10', '2']
+    builtins.input = lambda _: input_values.pop(0)
+    result = incremental_sequence()
+    assert result == [10, 12, 14, 16, 18, 20]
+    print("Test 96 Passed!")
+
+
+# Problem 97: User-Paced Content Generation
+"""
+Implement a function that generates numbers starting from 1. It should prompt the user if they want another number.
+If they reply 'yes', give them the next number. The function should return a list of generated numbers.
+"""
+def paced_generation():
+    pass
+
+def test_paced_generation():
+    import builtins
+    input_values = ['yes', 'yes', 'no']
+    builtins.input = lambda _: input_values.pop(0)
+    result = paced_generation()
+    assert result == [1, 2, 3]
+    print("Test 97 Passed!")
+
+
+# Problem 98: Content Filtering based on Feedback
+"""
+Create a function that prompts the user for a range limit and returns a list of numbers up to that limit which are divisible by 5.
+"""
+def filter_by_input():
+    pass
+
+def test_filter_by_input():
+    import builtins
+    input_values = ['20']
+    builtins.input = lambda _: input_values.pop(0)
+    result = filter_by_input()
+    assert result == [5, 10, 15, 20]
+    print("Test 98 Passed!")
+
+
+# Problem 99: Dynamic Content Generation
+"""
+Implement a function that prompts the user for a sentence and a word. The function should return the sentence with the word appended to it.
+"""
+def append_to_sentence():
+    pass
+
+def test_append_to_sentence():
+    import builtins
+    input_values = ['Hello', 'world']
+    builtins.input = lambda _: input_values.pop(0)
+    result = append_to_sentence()
+    assert result == "Hello world"
+    print("Test 99 Passed!")
+
+
+# Problem 100: Interactive Narrative Generator
+"""
+Implement a function that prompts the user for elements of a story: a protagonist, a setting, and an action.
+Return a generated story using these elements.
+"""
+def narrative_generator():
+    pass
+
+def test_narrative_generator():
+    import builtins
+    input_values = ['Alice', 'forest', 'singing']
+    builtins.input = lambda _: input_values.pop(0)
+    result = narrative_generator()
+    assert result == "Alice was in the forest, where she was singing joyfully."
+    print("Test 100 Passed!")
+
+
+
+if __name__ == "__main__":
+    test_is_valid()
+    test_LRUCache()
+    test_MyQueue()
+    test_maxDepth()
+    test_merge()
+    test_topKFrequent()
+    test_Codec()
+    test_search()
+    test_maxSlidingWindow()
+    test_hasCycle()
+    test_predict_weather()
+    test_tokenizer()
+    test_one_hot()
+    test_find_similar()
+    test_generate_pattern()
+    test_predict_next_word()
+    test_discriminator()
+    test_generate_noise()
+    test_mock_generative_model()
+    test_generate_text_trigram()
+    test_char_gen()
+    test_reduce_noise()
+    test_caption_generator()
+    test_summarize()
+    test_generate_art()
+    test_generate_haiku()
+    test_average_intensity()
+    test_generate_lyrics()
+    test_stylize_text()
+    test_apply_filter()
+    test_translate_to_french()
+    test_reverse_words()
+    test_reformat_date()
+    test_summarize_text()
+    test_number_to_words()
+    test_dialogue_system()
+    test_dna_to_rna()
+    test_pad_sequence()
+    test_tokenize()
+    test_time_conversion()
+    test_detect_gender_bias()
+    test_content_safety_filter()
+    test_detect_age_bias()
+    test_detect_racial_bias()
+    test_identify_sensitive_columns()
+    test_detect_outcome_bias()
+    test_personalization_ethics_check()
+    test_check_image_dataset_diversity()
+    test_check_ad_ethics()
+    test_loan_decision_fairness()
+    test_bleu_score()
+    test_coherence_score()
+    test_precision()
+    test_recall()
+    test_f1_score()
+    test_auc_roc()
+    test_perplexity()
+    test_hamming_loss()
+    test_novelty_score()
+    test_jaccard_similarity()
+    test_q_learning()
+    test_epsilon_greedy()
+    test_reward_function()
+    test_neural_network_q()
+    test_policy_gradient()
+    test_experience_replay()
+    test_state_transition()
+    test_model_based_planning()
+    test_monte_carlo_policy_evaluation()
+    test_td_lambda()
+    test_dot_product_attention()
+    test_scaled_dot_product_attention()
+    test_multi_head_attention()
+    test_create_attention_mask()
+    test_visualize_attention_weights()
+    test_attention_score()
+    test_additive_attention()
+    test_self_attention()
+    test_positional_encoding()
+    test_layer_normalization()
+    test_clean_text()
+    test_normalize_image()
+    test_split_dataset()
+    test_handle_missing_values()
+    test_tokenize_text()
+    test_one_hot_encode()
+    test_reshape_image()
+    test_extract_from_json()
+    test_balance_dataset()
+    test_flip_image()
+    test_square_user_input()
+    test_greeting_story()
+    test_interactive_square()
+    test_plot_points()
+    test_word_repeater()
+    test_incremental_sequence()
+    test_paced_generation()
+    test_filter_by_input()
+    test_append_to_sentence()
+    test_narrative_generator()
